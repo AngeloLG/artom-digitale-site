@@ -64,3 +64,18 @@ Il progetto sarà suddiviso nelle seguenti fasi sequenziali.
     3. Verificare la responsività del layout.
     4. Configurare il repository per il deployment su GitHub Pages e pubblicare il sito.
 
+### Fase 6: Revisione UI e Grafo [COMPLETATO]
+- **Obiettivo:** Migliorare l'impatto visivo del sito, la chiarezza dei contenuti e le funzionalità del grafo, seguendo le nuove direttive.
+- **Passi:**
+    1. **Revisione Titoli e Header:**
+        - Modificare l'header per ridurne la prominenza.
+        - Inserire il titolo del sito ("Artom digitale") in modo visibile nella home e nella pagina about.
+        - Rimuovere i titoli di sezione superflui ("Interfaccia a Grafo") e correggere "About il Progetto" in "Il Progetto".
+    2. **Revisione Stile Globale:**
+        - Aggiornare `css/style.css` per adottare uno stile più accattivante, ispirato al layout del sito di riferimento (dl.unito.it).
+    3. **Potenziamento del Grafo:**
+        - Aggiornare `js/graph.js` per rendere il nodo "Emanuele Artom" centrale, fisso e di dimensioni maggiori.
+        - Modificare la configurazione dei nodi per supportare immagini (utilizzando placeholder temporanei).
+    4. **Test Finale e Deployment:**
+        - Eseguire un ciclo completo di test per verificare che le modifiche non abbiano introdotto regressioni.
+        - Aggiornare il repository su GitHub per pubblicare la nuova versione.

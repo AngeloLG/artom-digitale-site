@@ -1,43 +1,34 @@
 # Descrizione Tecnica del Progetto
 
-## Stato Attuale: Progetto Completato
+## Stato Attuale: Progetto Completato (Revisione UI Applicata)
 
-Tutte le fasi di implementazione previste sono state completate. Il sito è ora funzionale, testato e pronto per il deployment.
+Tutte le fasi di implementazione, inclusa la revisione dell'interfaccia utente (UI), sono state completate. Il sito è ora nella sua versione finale, funzionale, testato e pronto per il deployment.
 
-### 1. Modulo Implementato
-È stata completata la **Fase 5: Refactoring, Test e Deployment**. Questa fase finale si è concentrata sulla revisione e pulizia del codice, sull'aggiunta di un logging più robusto per il debug e sulla preparazione delle istruzioni per la pubblicazione.
+### 1. Moduli Aggiornati
+La **Fase 6: Revisione UI e Grafo** ha introdotto miglioramenti significativi all'estetica e alla funzionalità:
 
-- **`js/main.js`**: Lo script è stato aggiornato per fungere da orchestratore principale, con una funzione `initialize_app()` che conferma l'avvio corretto dell'applicazione.
-- **`js/graph.js`** e **`js/export.js`**: Sono stati aggiunti controlli per verificare l'esistenza degli elementi HTML necessari (`#graph-container`, `#export-btn`) prima di eseguire il codice. Questo previene errori nella console quando gli script vengono caricati in pagine dove tali elementi non sono presenti. È stato anche aggiunto un logging più specifico per monitorare l'inizializzazione di ogni modulo.
-
-Il codice è stato interamente revisionato per garantire aderenza ai principi SOLID e Clean Code, assicurando modularità e manutenibilità.
+- **Layout e Stile (`css/style.css`)**: Il design è stato completamente rinnovato ispirandosi al sito `dl.unito.it`. È stato introdotto un nuovo font ("Titillium Web"), una palette di colori professionale (blu scuro e grigi) e una migliore spaziatura dei contenuti. L'header è ora più prominente ed elegante.
+- **Titoli e Struttura HTML (`index.html`, `pages/about.html`)**: I titoli sono stati resi più chiari e coerenti. È stato rimosso testo superfluo e la struttura dell'header è stata migliorata semanticamente.
+- **Grafo Potenziato (`js/graph.js`)**:
+    - Il nodo centrale "Emanuele Artom" è ora **fisso, più grande** e visivamente distinto.
+    - Tutti i nodi ora supportano **immagini**, con un placeholder temporaneo in `assets/images/placeholder.png` pronto per essere sostituito.
+    - La simulazione fisica è stata ottimizzata per una migliore disposizione spaziale.
+    - La logica di navigazione è stata migliorata: i link esterni si aprono in una nuova scheda, quelli interni no.
 
 ### 2. Come Funziona
-Il progetto è un sito web statico composto da HTML, CSS e JavaScript.
-- **Home Page (`index.html`)**: Mostra un grafo interattivo creato con Vis.js che funge da navigazione principale verso le risorse interne ed esterne.
-- **Pagina About (`pages/about.html`)**: Contiene la descrizione del progetto e offre una funzionalità per scaricare il testo in formato `.txt`.
-- **Logica Modulare**: Il codice JavaScript è suddiviso in moduli (`main.js`, `graph.js`, `export.js`), ciascuno con una responsabilità specifica, che vengono caricati in modo condizionale per evitare errori.
+Il funzionamento di base rimane quello di un sito statico, ma con un'esperienza utente notevolmente migliorata grazie al nuovo design e al grafo più funzionale e visivamente accattivante.
 
 ### 3. Come si Testa o si Esegue
-Il test finale del sito completo dovrebbe coprire tutte le funzionalità implementate:
+Il test finale dovrebbe includere tutte le verifiche precedenti, con un'attenzione particolare alle nuove modifiche:
 
-1.  **Test Generale**: Aprire `index.html` in diversi browser moderni (es. Chrome, Firefox, Edge) per verificare la compatibilità. È richiesta una connessione a internet.
-2.  **Test del Grafo**: Verificare che il grafo nella home page si carichi correttamente e che tutti i nodi siano cliccabili e puntino alle URL corrette (sia interne che esterne).
-3.  **Test di Navigazione**: Usare il menu di navigazione per spostarsi tra la Home e la pagina About.
-4.  **Test Funzione di Esportazione**: Dalla pagina About, cliccare sul pulsante "Scarica come .txt" e verificare che il file venga scaricato correttamente e contenga il testo giusto.
-5.  **Test di Responsività**: Ridimensionare la finestra del browser o usare gli strumenti per sviluppatori per simulare dispositivi mobili e verificare che il layout si adatti in modo leggibile.
-6.  **Controllo Console**: Aprire gli strumenti per sviluppatori (F12) e verificare che nella console appaiano i messaggi di inizializzazione corretti e che non ci siano errori.
+1.  **Test Visivo**: Aprire `index.html` e verificare che il nuovo stile (font, colori, header) sia applicato correttamente.
+2.  **Test del Grafo Avanzato**:
+    - Verificare che il nodo "Emanuele Artom" sia al centro, non si muova e sia più grande degli altri.
+    - Verificare che tutti i nodi mostrino l'immagine placeholder.
+    - Testare nuovamente tutti i link dei nodi.
+3.  **Test dei Titoli**: Controllare che il titolo nella pagina "About" sia "Il Progetto" e che non ci siano titoli superflui nella home page.
+4.  **Test di Responsività e Cross-Browser**: Verificare che il nuovo design funzioni bene su diverse dimensioni di schermo e browser.
 
 ### 4. Come Effettuare il Deployment su GitHub Pages
 
-Per pubblicare il sito, segui questi passaggi:
-
-1.  **Prepara il Repository**: Assicurati che il tuo progetto sia in un repository GitHub. Se non lo è, creane uno e carica tutti i file (`index.html`, `css/`, `js/`, `pages/`, ecc.).
-2.  **Vai alle Impostazioni**: Nel tuo repository su GitHub, vai alla scheda "Settings".
-3.  **Seleziona "Pages"**: Nel menu a sinistra, seleziona la voce "Pages".
-4.  **Scegli la Sorgente**:
-    - Alla voce "Source", seleziona "Deploy from a branch".
-    - Alla voce "Branch", assicurati che sia selezionato il branch corretto (solitamente `main` o `master`).
-    - Lascia la cartella su `/ (root)`.
-    - Clicca su **"Save"**.
-5.  **Attendi la Pubblicazione**: GitHub impiegherà qualche minuto per costruire e pubblicare il sito. Una volta pronto, un banner verde apparirà in cima alla pagina delle impostazioni con il link al tuo sito pubblicato (solitamente nel formato `https://<tuo-username>.github.io/<nome-repository>/`).
+Le istruzioni per il deployment rimangono le stesse, ma ora pubblicherai la versione aggiornata e migliorata del sito. Se hai già pubblicato la versione precedente, ti basterà caricare le nuove modifiche sul repository GitHub, e GitHub Pages aggiornerà automaticamente il sito online.
