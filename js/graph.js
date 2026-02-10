@@ -9,74 +9,72 @@
  * Il grafo rappresenta le relazioni tra Emanuele Artom e le risorse del progetto.
  */
 function drawGraph() {
-    // Definiamo i nodi del grafo con livelli per il layout gerarchico.
     const nodes = new vis.DataSet([
         // Livello 1: Nodo Centrale
         { 
             id: 1, 
             label: 'Emanuele Artom', 
+            shape: 'circularImage',
+            image: 'immagini/artom.jpg',
             title: 'Vai alla risorsa principale', 
             url: 'https://biblio-rag-app.fly.dev/',
-            shape: 'image',
-            image: 'immagini/artom.jpg',
-            size: 60, // Aumentato ulteriormente
+            size: 50,
             level: 1
         },
         // Livello 2: Nodo Risorse
         { 
             id: 2, 
             label: 'Risorse', 
-            title: 'Nodo contenitore per le risorse',
-            shape: 'dot', // Cambiato in cerchio
-            color: '#002B5C', // Blu come l'header
+            shape: 'dot',
+            color: '#002B5C',
             size: 30,
-            font: { color: '#fff' }, // Testo bianco per contrasto
+            font: { color: '#fff' },
+            title: 'Nodo contenitore per le risorse',
             level: 2
         },
         // Livello 3: Nodi Foglia (Risorse)
         { 
             id: 3, 
             label: 'Archivio CDEC', 
+            shape: 'circularImage',
+            image: 'immagini/logo-cdec.svg',
             title: 'Vai all\'archivio CDEC', 
             url: 'https://digital-library.cdec.it/cdec-opac/hist/detail/IT-CDEC-ST0003-000001/emanuele-artom',
-            shape: 'image',
-            image: 'immagini/logo-cdec.svg',
             level: 3
         },
         { 
             id: 4, 
             label: 'Biblioteca Artom', 
+            shape: 'circularImage',
+            image: 'immagini/logounito.svg',
             title: 'Vai alla biblioteca Artom', 
             url: 'https://dl.unito.it/it/collezioni/collezione/fondo-artom/',
-            shape: 'image',
-            image: 'immagini/logounito.svg',
             level: 3
         },
         { 
             id: 5, 
             label: 'Altre Risorse', 
+            shape: 'circularImage',
+            image: 'immagini/publicdomainturin_itemimage.jpg',
             title: 'Vai ad altre risorse', 
             url: 'https://archive.org/details/publicdomainturin',
-            shape: 'image',
-            image: 'immagini/publicdomainturin_itemimage.jpg',
             level: 3
         },
         // Livello 0: Nodo Progetto (in alto)
         { 
             id: 6, 
             label: 'La Cornice di Progetto', 
+            shape: 'circularImage',
+            image: 'immagini/logo-italia-domani.svg', // Immagine aggiornata
             title: 'Leggi la descrizione del progetto', 
             url: 'pages/about.html',
-            shape: 'image',
-            image: 'assets/images/placeholder.png', // Placeholder mantenuto
             level: 0
         }
     ]);
 
-    // Definiamo le connessioni (edges) tra i nodi.
     const edges = new vis.DataSet([
-        { from: 1, to: 6 }, // Progetto -> Artom
-        { from: 1, to: 2 }, // Artom -> Risorse
+        { from: 6, to: 1 }, // Cambiata direzione per sortMethod
+        { from: 1, to: 2 },
         { from: 2, to: 3 },
         { from: 2, to: 4 },
         { from: 2, to: 5 }
@@ -85,7 +83,6 @@ function drawGraph() {
     const container = document.getElementById('graph-container');
     const data = { nodes: nodes, edges: edges };
 
-    // Definiamo le opzioni di visualizzazione del grafo.
     const options = {
         nodes: {
             size: 40,
@@ -96,7 +93,7 @@ function drawGraph() {
             borderWidth: 3,
             color: {
                 border: '#0056b3',
-                background: '#e9ecef',
+                background: '#fff',
                 highlight: { border: '#002B5C', background: '#d0ddee' }
             },
             shapeProperties: {
@@ -112,21 +109,21 @@ function drawGraph() {
             }
         },
         physics: {
-            enabled: false // Disabilitiamo la fisica per usare il layout gerarchico
+            enabled: false
         },
         layout: {
             hierarchical: {
                 enabled: true,
-                direction: 'UD', // Dall'alto (Up) al basso (Down)
+                direction: 'UD',
                 sortMethod: 'directed',
-                nodeSpacing: 150,
-                treeSpacing: 200
+                levelSeparation: 150, // Aumentata distanza tra livelli
+                nodeSpacing: 200 // Aumentata distanza tra nodi sullo stesso livello
             }
         },
         interaction: {
             hover: true,
             tooltipDelay: 200,
-            dragNodes: false // Impedisce di trascinare i nodi
+            dragNodes: false
         }
     };
 
