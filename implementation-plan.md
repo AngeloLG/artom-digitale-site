@@ -79,3 +79,21 @@ Il progetto sarà suddiviso nelle seguenti fasi sequenziali.
     4. **Test Finale e Deployment:**
         - Eseguire un ciclo completo di test per verificare che le modifiche non abbiano introdotto regressioni.
         - Aggiornare il repository su GitHub per pubblicare la nuova versione.
+
+### Fase 7: Finalizzazione Strutturale [COMPLETATO]
+- **Obiettivo:** Riorganizzare i contenuti e i collegamenti del grafo per una maggiore coerenza logica.
+- **Passi:**
+    1. **Creazione Pagina "Il Progetto":**
+        - Creare un nuovo file `pages/progetto.html`.
+        - Inserire il testo fornito e applicare la struttura HTML coerente con il resto del sito.
+    2. **Aggiornamento Link Grafo:**
+        - Modificare `js/graph.js` per far puntare il nodo "Emanuele Artom" alla nuova pagina `pages/progetto.html`.
+    3. **Modifica Nodo "Risorse":**
+        - Aggiornare `js/graph.js` per trasformare il nodo "Risorse" in un semplice snodo testuale (forma `ellipse` o `text`).
+    4. **Rinominare Pagina "About":**
+        - Cambiare il titolo `<h2>` e il `<title>` del file `pages/about.html` in "La cornice del progetto".
+    5. **Aggiungere Call-to-Action:**
+        - Inserire un pulsante CTA nella pagina `progetto.html` che linka alla risorsa interattiva.
+    6. **Test Finale e Deployment:**
+        - Verificare tutti i nuovi link e le modifiche.
+        - Caricare la versione finale su GitHub.

@@ -16,8 +16,8 @@ function drawGraph() {
             label: 'Emanuele Artom', 
             shape: 'circularImage',
             image: 'immagini/artom.jpg',
-            title: 'Vai alla risorsa principale', 
-            url: 'https://biblio-rag-app.fly.dev/',
+            title: 'Leggi la descrizione del progetto', 
+            url: 'pages/progetto.html', // Link aggiornato
             size: 50,
             level: 1
         },
@@ -25,12 +25,14 @@ function drawGraph() {
         { 
             id: 2, 
             label: 'Risorse', 
-            shape: 'dot',
-            color: '#002B5C',
-            size: 30,
-            font: { color: '#fff' },
+            shape: 'text', // Cambiato in semplice testo
             title: 'Nodo contenitore per le risorse',
-            level: 2
+            level: 2,
+            font: {
+                size: 20,
+                bold: true,
+                color: '#002B5C'
+            }
         },
         // Livello 3: Nodi Foglia (Risorse)
         { 
@@ -65,15 +67,15 @@ function drawGraph() {
             id: 6, 
             label: 'La Cornice di Progetto', 
             shape: 'circularImage',
-            image: 'immagini/logo-italia-domani.svg', // Immagine aggiornata
-            title: 'Leggi la descrizione del progetto', 
+            image: 'immagini/logo-italia-domani.svg',
+            title: 'Leggi la cornice del progetto', 
             url: 'pages/about.html',
             level: 0
         }
     ]);
 
     const edges = new vis.DataSet([
-        { from: 6, to: 1 }, // Cambiata direzione per sortMethod
+        { from: 6, to: 1 },
         { from: 1, to: 2 },
         { from: 2, to: 3 },
         { from: 2, to: 4 },
@@ -116,8 +118,8 @@ function drawGraph() {
                 enabled: true,
                 direction: 'UD',
                 sortMethod: 'directed',
-                levelSeparation: 150, // Aumentata distanza tra livelli
-                nodeSpacing: 200 // Aumentata distanza tra nodi sullo stesso livello
+                levelSeparation: 150,
+                nodeSpacing: 200
             }
         },
         interaction: {

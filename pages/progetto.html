@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Progetto - Artom digitale</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-title">Artom digitale</div>
+        <p class="site-subtitle">From Description to Narrative: Evaluating AI-Driven RAG Architectures for the Mediation and Enhancement of Personal Collections in Academic Libraries</p>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">La Cornice del Progetto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <main>
+            <h2>Il Progetto</h2>
+            <section id="project-description">
+                <p>Emanuele Artom (1915–1944) è stato uno storico e intellettuale torinese, attivo nella Resistenza antifascista, la cui produzione scritta costituisce oggi un fondo documentario di particolare rilievo per lo studio della storia politica, culturale e civile del Novecento italiano. I suoi diari, le lettere, gli appunti di studio e gli scritti storici restituiscono una testimonianza diretta e continuativa degli anni della persecuzione razziale e della lotta resistenziale, caratterizzata da una forte attenzione alla dimensione analitica e interpretativa degli eventi vissuti. Arrestato nel marzo del 1944 e sottoposto a tortura, Artom morì nel carcere delle Nuove di Torino pochi giorni dopo.</p>
+                <p>Il progetto di ricerca prende avvio dalla costruzione di una collezione documentaria digitale delimitata, pensata come base esclusiva per la sperimentazione di un’architettura di tipo Retrieval-Augmented Generation (RAG). La collezione interrogabile è il risultato dell’integrazione di tre nuclei documentari principali.</p>
+                <p>Il primo è costituito dai materiali conservati presso la Biblioteca storica “Arturo Graf” dell’Università di Torino, che raccoglie opere a stampa di Emanuele Artom e volumi direttamente connessi alla sua formazione intellettuale e al suo orizzonte culturale.</p>
+                <p>Il secondo nucleo deriva da una selezione mirata di unità documentarie provenienti dall’archivio del CDEC (Centro di Documentazione Ebraica Contemporanea), in particolare diari, lettere e scritti personali, scelti in funzione della loro rilevanza tematica e della loro coerenza con gli obiettivi sperimentali del progetto.</p>
+                <p>Il terzo nucleo comprende opere di e su Artom digitalizzate e recuperate attraverso iniziative di open access e progetti di pubblico dominio, che hanno permesso di ampliare la collezione includendo edizioni a stampa e contributi critici liberamente accessibili.</p>
+                <p>Tutti i documenti inclusi nel sistema sono stati trattati come fonti primarie e secondarie esplicitamente identificate: i testi sono stati normalizzati, segmentati in unità coerenti e accompagnati da metadati descrittivi, in modo da garantire un controllo puntuale sul contenuto effettivamente interrogabile. La collezione non ha quindi una funzione rappresentativa o esemplificativa, ma costituisce il perimetro informativo entro cui il sistema RAG opera in modo esclusivo.</p>
+                <p>L’architettura RAG adottata nel progetto è progettata per mantenere un forte ancoraggio documentario. A fronte di una domanda formulata dall’utente in linguaggio naturale, il sistema attiva una fase di recupero basata su similarità semantica, individuando i segmenti testuali più pertinenti all’interno della collezione. Solo questi frammenti vengono poi forniti al modello linguistico come contesto per la generazione della risposta. Ne deriva un output che non introduce informazioni esterne al corpus, ma riorganizza, sintetizza e mette in relazione contenuti già presenti nei documenti selezionati.</p>
+                <p>Dal punto di vista dell’utente, l’interazione avviene tramite un’interfaccia conversazionale che consente di interrogare la collezione senza dover conoscere preventivamente la struttura archivistica o bibliografica del fondo. Le domande possono riguardare singoli documenti, periodi specifici della vita di Artom, temi ricorrenti nei diari e nelle lettere, oppure il confronto tra tipologie documentarie differenti. Il sistema restituisce risposte costruite a partire dai testi recuperati, favorendo una lettura trasversale e contestuale del fondo, particolarmente utile in presenza di materiali eterogenei per genere, funzione e momento di produzione.</p>
+                <p>In questa prospettiva, il progetto non mira a sostituire gli strumenti tradizionali di consultazione bibliotecaria o archivistica, ma a sperimentare una forma di mediazione documentaria assistita, capace di supportare l’esplorazione di una collezione complessa mantenendo la centralità delle fonti. I risultati di questa sperimentazione sono confluiti in due contributi scientifici: il primo, già pubblicato, che presenta l’impianto concettuale e i primi esiti del progetto (La Gorga, Testa e Verna 2025); il secondo, attualmente sottomesso, che approfondisce in chiave valutativa l’architettura RAG adottata, i modelli impiegati e i criteri di analisi applicati alle collezioni personali (La Gorga e Verna 2026).</p>
+                
+                <div class="cta-container">
+                    <a href="https://biblio-rag-app.fly.dev/" target="_blank" class="cta-button">Interroga la Collezione</a>
+                </div>
+
+                <h3>Riferimenti</h3>
+                <p>La Gorga, Angelo, Roberto Testa, and Lorenzo Verna. 2025. “LLM e Retrieval Augmented Generation (RAG) per le biblioteche. Sperimentazioni, prospettive e valorizzazione del patrimonio.” DigitCult – Scientific Journal on Digital Cultures 10 (1): 59–73. https://doi.org/10.36158/97912566920714</p>
+                <p>La Gorga, Angelo, and Lorenzo Verna. 2026. “Evaluating Retrieval-Augmented Generation for Personal Collections: Architecture, Models and Criteria.” JLIS.it. Submitted for publication.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Angelo La Gorga</p>
+        </footer>
+    </div>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

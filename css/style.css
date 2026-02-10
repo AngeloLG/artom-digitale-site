@@ -114,6 +114,31 @@ main h2 {
     background-color: #004494;
 }
 
+/* Stile per il pulsante Call to Action (CTA) */
+.cta-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #00B2A9; /* Colore secondario per evidenza */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #008e86;
+    transform: translateY(-2px); /* Effetto al sollevamento */
+}
+
 /* Footer */
 footer {
     text-align: center;
